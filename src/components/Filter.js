@@ -1,12 +1,9 @@
 import React from 'react'
 
-function Filter({ selectedCategory, setSelectedCategory }) {
-    function handleCategoryChange(event) {
-        setSelectedCategory(event.target.value);
-      }
+function Filter({ categoryChange, selectedCategory, setSelectedCategory }) {
 
     return (
-        <select name="filter" onChange={handleCategoryChange}>
+        <select name="filter" onChange={categoryChange}>
           <option value="All">Filter by category</option>
           <option value="Produce">Produce</option>
           <option value="Dairy">Dairy</option>

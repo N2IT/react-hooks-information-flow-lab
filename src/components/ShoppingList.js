@@ -5,6 +5,10 @@ import Filter from './Filter'
 function ShoppingList({ items }) {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
+  function handleCategoryChange(event) {
+    setSelectedCategory(event.target.value);
+  }
+
   const itemsToDisplay = items.filter((item) => {
     if (selectedCategory === "All") return true;
 
@@ -14,7 +18,7 @@ function ShoppingList({ items }) {
   return (
     <div className="ShoppingList">
       <div className="Filter">
-        <Filter selectedCateogry={selectedCategory} setSelectedCategory={setSelectedCategory} />
+        <Filter selectedCateogry={selectedCategory} setSelectedCategory={setSelectedCategory} categoryChange={handleCategoryChange} />
       </div>
       <ul className="Items">
         {itemsToDisplay.map((item) => (
