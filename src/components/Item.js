@@ -3,7 +3,7 @@ import React, { useState } from "react";
 function Item({ name, category }) {
   const [isInCart, setIsInCart] = useState(false);
 
-  function handleAddToCartClick() {
+  function onCategoryChange() {
     setIsInCart((isInCart) => !isInCart);
   }
 
@@ -13,7 +13,7 @@ function Item({ name, category }) {
       <span className="category">{category}</span>
       <button
         className={isInCart ? "remove" : "add"}
-        onClick={handleAddToCartClick}
+        onClick={onCategoryChange}
       >
         {isInCart ? "Remove From" : "Add to"} Cart
       </button>

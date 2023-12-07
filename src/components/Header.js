@@ -1,13 +1,13 @@
 import React from 'react'
 
 
-function Header({ modeToggle, isDarkMode }) {
+function Header({ onDarkModeClick, isDarkMode }) {
     
 
     return (
         <header>
         <h2>Shopster</h2>
-        <button onClick={modeToggle}>
+        <button onClick={onDarkModeClick}>
           {isDarkMode ? "Dark" : "Light"} Mode
         </button>
       </header>
